@@ -167,6 +167,39 @@ nav ul a:hover{color:var(--ink-2)}
 .proj .base{height:6px;background:var(--orange)}
 .placeholder{outline:1px dashed var(--ink-2);outline-offset:-1px}
 
+/* video player */
+.vbadge{position:absolute;left:10px;bottom:10px;width:40px;height:40px;border-radius:50%;background:rgba(249,247,244,.92);display:grid;place-items:center;color:var(--ink);transition:transform .25s var(--ease),background .25s}
+.clip:hover .vbadge,.pc:hover .vbadge,.case:hover .play{transform:scale(1.08);background:var(--orange)}
+.case .open-case{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:500;font-size:14px;color:var(--ink);border-bottom:1px solid var(--ink);align-self:flex-start}
+.player{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px);background:rgba(20,20,24,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.player.open{display:flex}
+.player-box{position:relative;background:var(--paper);display:flex;max-height:calc(100dvh - 24px);max-width:min(1040px,100%);width:auto;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:pIn .35s var(--ease)}
+@keyframes pIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.player-video{flex:0 0 auto;background:#000;height:min(calc(100dvh - 80px),760px);aspect-ratio:9/16}
+.player-video iframe{width:100%;height:100%;border:0;display:block;background:#000}
+.player-info{width:min(460px,46vw);overflow-y:auto;padding:30px 30px 26px;display:flex;flex-direction:column}
+.player.video-only .player-info{width:min(300px,40vw)}
+.player-info h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.04em;line-height:1.02;margin:14px 0 12px}
+.player-info .goal{color:var(--ink-2);margin:0 0 22px}
+.pstats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);margin-bottom:22px}
+.pstats div{padding:12px 10px 12px 0;border-bottom:1px solid var(--line)}
+.pstats b{display:block;font-size:24px;letter-spacing:-.04em;font-weight:600;line-height:1.1}
+.pblock{margin:0 0 18px}
+.pblock .mono{display:block;margin-bottom:6px}
+.pblock p{margin:0 0 8px;font-size:15px}
+.pblock p strong{font-weight:600}
+.player-ext{margin-top:auto;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.player-ext a{font-weight:500;border-bottom:1px solid var(--ink);text-decoration:none}
+.player-close{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--orange);color:var(--ink);cursor:pointer;display:grid;place-items:center;z-index:2}
+body.locked{overflow:hidden}
+@media (max-width:760px){
+  .player{padding:0;align-items:stretch}
+  .player-box{flex-direction:column;max-height:100dvh;height:100dvh;width:100%;max-width:100%;overflow-y:auto}
+  .player-video{width:100%;height:auto;aspect-ratio:9/16;max-height:72dvh;flex:0 0 auto;align-self:center}
+  .player-info,.player.video-only .player-info{width:100%;overflow:visible;padding:22px 16px 28px}
+  .player-close{top:10px;right:10px}
+}
+
 /* contact */
 .contact{padding:clamp(88px,12vw,160px) 0 clamp(64px,8vw,96px);text-align:center}
 .contact h2{font-size:clamp(56px,10vw,144px);margin:0 auto 24px;max-width:12ch}
@@ -402,6 +435,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
   </section>
 </main>
 
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="player-title" hidden>
+  <div class="player-box">
+    <button class="player-close" type="button" aria-label="Close video"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="player-video" id="player-video"></div>
+    <div class="player-info" id="player-info"></div>
+  </div>
+</div>
+
 <footer><div class="wrap"><span>© 2026 Bruno Ferreira</span><span>Tel Aviv</span></div></footer>
 
 <script>
@@ -436,6 +477,100 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 
   document.querySelectorAll('.rail-btns button').forEach(function(b){
     b.addEventListener('click', function(){ var r = document.getElementById('rail'); r.scrollBy({left: b.dataset.dir * r.clientWidth * .8, behavior: reduce ? 'auto' : 'smooth'}); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var CASES = {
+    'DW4LBVPDidC': {
+      kicker:'01 / Short-form growth',
+      title:'The Storytelling Hook: Building Organic Reach & Community Feedback Loops',
+      goal:'Drive high-retention organic reach and foster deep community engagement through narrative short-form video.',
+      stats:[['774K','Views'],['57K','Likes'],['4.9K','Saves'],['1.9K','Shares'],['1.5K','Reposts'],['17.89s','Avg. watch']],
+      role:'Full-stack execution: concept development, scriptwriting, pacing optimization, framing, and active community monitoring.',
+      outcome:['Growth loop',['Used the active comment section, where viewers demanded a continuation of the story, as a live focus group to validate audience demand instantly, de-risking creative direction for subsequent content.']]
+    },
+    'DWzMsQ3jNM-': {
+      kicker:'02 / Product placement',
+      title:'Native Sponsored Content: Driving High-Intent Utility and Organic Product Discovery',
+      goal:'Create native, 100% organic sponsored content (for Soniox) that integrates product value into a niche interest community without triggering ad fatigue.',
+      stats:[['734K','Views'],['73K','Likes'],['27K','Saves'],['22K','Shares'],['3.1K','Reposts'],['11.93s','Avg. watch']],
+      role:'End-to-end execution: ideation, scripting, pacing optimization, framing, and native product placement.',
+      outcome:['Commercial impact',['Avoided heavy-handed sales pitches. Instead, solved a lifestyle/behavioral workflow friction point, transforming the comment section into a high-intent discovery hub where users actively inquired about the tool within a 48-hour velocity window.']]
+    },
+    'DXcOiRDii6t': {
+      kicker:'03 / Community scale',
+      title:'Full-Funnel Growth Engineering: Comment Conversion & Trial Reel Repurposing',
+      goal:'Drive product awareness via 100% organic sponsored content while engineering a secondary conversion funnel to build a closed community ecosystem.',
+      stats:[['330K','Views'],['12K','Likes'],['10K','Saves'],['7.4K','Shares'],['121','Reposts'],['17.88s','Avg. watch']],
+      role:'End-to-end execution: ideation, scripting, comment-section funnel optimization, and cross-feature distribution strategy.',
+      outcome:['Growth playbook',['<strong>Comment-section funneling.</strong> Engineered conversion entirely in the comments by actively guiding high-intent users rather than relying on an in-video CTA.','<strong>Asset repurposing.</strong> Leveraged Instagram’s Trial Reels framework to test and scale the winning creative across broader non-follower distribution, scaling a private community channel to 470 active members in 7 days.']]
+    }
+  };
+
+  function parse(href){
+    var m;
+    if ((m = href.match(/instagram\.com\/reel\/([\w-]+)/))) return {pf:'Instagram', id:m[1], src:'https://www.instagram.com/reel/'+m[1]+'/embed/'};
+    if ((m = href.match(/tiktok\.com\/@[\w.]+\/video\/(\d+)/))) return {pf:'TikTok', id:m[1], src:'https://www.tiktok.com/player/v1/'+m[1]+'?autoplay=1&rel=0&description=1'};
+    if ((m = href.match(/youtube\.com\/shorts\/([\w-]+)/))) return {pf:'YouTube', id:m[1], src:'https://www.youtube.com/embed/'+m[1]+'?autoplay=1&playsinline=1&rel=0'};
+    return null;
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  var player = document.getElementById('player'), vid = document.getElementById('player-video'),
+      info = document.getElementById('player-info'), lastFocus = null;
+
+  function open(a){
+    var v = parse(a.href); if (!v) return false;
+    var c = CASES[v.id] && a.classList.contains('case') ? CASES[v.id] : null;
+    vid.innerHTML = '<iframe src="'+v.src+'" title="'+v.pf+' video" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    var ext = '<div class="player-ext"><span class="mono">'+v.pf+'</span><a href="'+esc(a.href)+'" target="_blank" rel="noopener">Open on '+v.pf+' ↗</a></div>';
+    if (c){
+      info.innerHTML = '<span class="mono">'+esc(c.kicker)+'</span><h3 id="player-title">'+esc(c.title)+'</h3><p class="goal">'+esc(c.goal)+'</p>'
+        + '<div class="pstats">'+c.stats.map(function(s){return '<div><b>'+s[0]+'</b><span class="mono">'+s[1]+'</span></div>';}).join('')+'</div>'
+        + '<div class="pblock"><span class="mono">Role</span><p>'+esc(c.role)+'</p></div>'
+        + '<div class="pblock"><span class="mono">'+esc(c.outcome[0])+'</span>'+c.outcome[1].map(function(p){return '<p>'+p+'</p>';}).join('')+'</div>' + ext;
+      player.classList.remove('video-only');
+    } else {
+      var t = a.querySelector('h3, p'), n = a.querySelector('.meta b, .row span:last-child');
+      info.innerHTML = '<span class="mono">'+v.pf+'</span><h3 id="player-title">'+esc(t ? t.textContent : v.pf+' video')+'</h3>'
+        + (n ? '<p class="goal">'+esc(n.textContent)+(/views/.test(n.textContent)?'':' views')+'</p>' : '') + ext;
+      player.classList.add('video-only');
+    }
+    lastFocus = a; player.hidden = false; player.classList.add('open'); document.body.classList.add('locked');
+    player.querySelector('.player-close').focus();
+    return true;
+  }
+  function close(){
+    player.classList.remove('open'); player.hidden = true; vid.innerHTML = ''; document.body.classList.remove('locked');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('a.case, a.clip, a.pc').forEach(function(a){
+    if (!parse(a.href)) return;
+    if (!a.classList.contains('case')) {
+      var m = a.querySelector('.media');
+      if (m && !m.querySelector('.vbadge')) m.insertAdjacentHTML('beforeend','<span class="vbadge" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></span>');
+    } else {
+      var body = a.querySelector('.body .nums');
+      if (body) body.insertAdjacentHTML('afterend','<span class="open-case">Watch &amp; read the case study →</span>');
+    }
+    a.setAttribute('aria-haspopup','dialog');
+    a.addEventListener('click', function(e){
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      if (open(a)) e.preventDefault();
+    });
+  });
+  player.addEventListener('click', function(e){ if (e.target === player || e.target.closest('.player-close')) close(); });
+  document.addEventListener('keydown', function(e){
+    if (!player.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'Tab') {
+      var f = player.querySelectorAll('button, a[href], iframe'), first = f[0], last = f[f.length-1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 })();
 </script>
