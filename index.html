@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bruno Ferreira — Media Kit</title>
+<meta name="description" content="Bruno Ferreira, growth content and short-form strategist in Tel Aviv. Scaling tech products and tools through organic short-form video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html,body{background:#F9F7F4}
+:root{
+  --paper:#F9F7F4; --paper-2:#F1EEEA; --sand:#E2DED7;
+  --ink:#1E1E24; --ink-2:#6D6A67; --line:#DDD8D1;
+  --orange:#FF6A00; --blue:#3950E6; --blue-soft:#AFB9FB;
+  --pad:clamp(16px,4vw,48px); --max:1200px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Geist',system-ui,sans-serif;color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(30,30,36,.035) 1px,transparent 1px);background-size:3px 3px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.tag{display:inline-block;background:var(--orange);color:var(--ink);font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;padding:2px 6px;line-height:1.25}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:8px;padding:11px 18px;font-weight:500;font-size:15px;text-decoration:none;transition:transform .2s var(--ease),background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-orange{background:var(--orange);color:var(--ink)}
+.btn-orange:hover{background:#FF7A1F}
+h1,h2,h3{font-weight:600;letter-spacing:-.045em;line-height:.95;margin:0}
+section{padding:clamp(72px,10vw,128px) 0 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(38px,5.5vw,72px)}
+.sec-head p{margin:12px 0 0;color:var(--ink-2);max-width:440px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(249,247,244,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.scrolled{border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.02em;text-decoration:none;font-size:17px}
+.brand i{width:14px;height:14px;border-radius:50%;background:var(--orange);display:block}
+.brand span{color:var(--ink-2);font-weight:400}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-weight:500;font-size:15px}
+nav ul a{text-decoration:none}
+nav ul a:hover{color:var(--ink-2)}
+
+/* corner marks */
+.cm{position:relative}
+.cm>b{position:absolute;width:7px;height:7px;background:var(--ink)}
+.cm>b:nth-of-type(1){top:-14px;left:-14px}.cm>b:nth-of-type(2){top:-14px;right:-14px}
+.cm>b:nth-of-type(3){bottom:-14px;left:-14px}.cm>b:nth-of-type(4){bottom:-14px;right:-14px}
+
+/* hero */
+.hero{padding-top:clamp(56px,8vw,104px)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(32px,6vw,88px);align-items:center}
+.hero h1{font-size:clamp(56px,10vw,136px);margin:18px 0 24px}
+.hero h1 .w{display:inline-block;opacity:0;filter:blur(12px);transform:translateY(18px);animation:wIn .9s var(--ease) forwards}
+@keyframes wIn{to{opacity:1;filter:blur(0);transform:none}}
+.hero .lead{font-size:clamp(18px,1.8vw,22px);max-width:500px;margin:0 0 30px;letter-spacing:-.01em}
+.hero-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hero-meta .loc{display:flex;align-items:center;gap:6px;color:var(--ink-2);font-size:15px}
+.portrait img{width:100%;aspect-ratio:913/1053;object-fit:cover}
+.fade{opacity:0;transform:translateY(16px);animation:wIn .9s var(--ease) forwards}
+
+/* brands */
+.brands{padding-top:clamp(64px,8vw,96px)}
+.brands-row{display:flex;align-items:center;gap:28px;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:22px 0;overflow:hidden}
+.brands-row .lbl{flex:0 0 auto}
+.marquee{overflow:hidden;flex:1;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;gap:56px;width:max-content;animation:scroll 38s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+.logo img{height:30px;width:30px;object-fit:contain;border-radius:7px}
+.logo img.word{width:auto;border-radius:0}
+
+/* stats */
+.platforms{display:flex;gap:8px;flex-wrap:wrap}
+.platforms a{border:1px solid var(--ink);border-radius:8px;padding:7px 12px;font-size:14px;font-weight:500;text-decoration:none}
+.platforms a:hover{background:var(--ink);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.stat{padding:22px 24px 0 0}
+.stat+.stat{padding-left:24px;border-left:1px solid var(--line)}
+.stat .n{font-size:clamp(44px,6.4vw,88px);font-weight:600;letter-spacing:-.055em;line-height:1;margin:18px 0 10px;font-variant-numeric:tabular-nums}
+
+/* audience */
+.aud{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.panel{background:#fff;border:1px solid var(--line);padding:26px}
+.ring-row{display:flex;gap:22px;align-items:center}
+.ring-row+.ring-row{margin-top:26px;padding-top:26px;border-top:1px solid var(--line)}
+.ring{width:108px;height:108px;flex:0 0 108px;border-radius:50%;-webkit-mask:radial-gradient(circle 33px,transparent 97%,#000 100%);mask:radial-gradient(circle 33px,transparent 97%,#000 100%)}
+.legend{list-style:none;margin:10px 0 0;padding:0;font-size:14px}
+.legend li{display:flex;align-items:center;gap:8px;padding:2px 0}
+.legend i{width:10px;height:10px;display:block}
+.legend b{margin-left:auto;font-variant-numeric:tabular-nums;padding-left:16px}
+.loc-list{list-style:none;margin:0;padding:0}
+.loc-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.loc-list .top{display:flex;justify-content:space-between}
+.loc-list .bar{height:5px;background:var(--paper-2);margin-top:8px}
+.loc-list .bar i{display:block;height:100%;background:var(--orange);width:0;transition:width 1.2s var(--ease)}
+.map{margin-top:26px}
+.map svg{width:100%;height:auto;display:block}
+.map-note{font-size:13px;color:var(--ink-2);margin-top:12px}
+
+/* cases */
+.cases-block{background:var(--blue);color:#fff;margin-top:clamp(72px,10vw,128px);padding:clamp(56px,8vw,104px) 0}
+.cases-block .sec-head .mono{color:var(--blue-soft)}
+.case .mono{color:var(--ink-2)}
+.cases-block h2{font-size:clamp(44px,7vw,100px);color:#fff}
+.cases-block .sec-head p{color:#DDE2FF}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case{background:var(--paper);color:var(--ink);text-decoration:none;display:flex;flex-direction:column;transition:transform .35s var(--ease)}
+.case:hover{transform:translateY(-6px)}
+.case .media{position:relative;overflow:hidden}
+.case img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s var(--ease)}
+.case:hover img{transform:scale(1.04)}
+.play{position:absolute;inset:auto auto 14px 14px;width:44px;height:44px;border-radius:50%;background:rgba(249,247,244,.92);display:grid;place-items:center}
+.case .body{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column}
+.case h3{font-size:24px;letter-spacing:-.035em;margin:12px 0 6px;line-height:1.05}
+.case .kind{color:var(--ink-2);font-size:14px;margin:0 0 18px}
+.case .nums{margin-top:auto;display:flex;gap:18px;align-items:baseline;border-top:1px solid var(--line);padding-top:14px}
+.case .nums b{font-size:30px;letter-spacing:-.045em;font-weight:600}
+.case .base{height:6px;background:var(--orange)}
+
+/* rail */
+.rail-wrap{position:relative}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.clip{flex:0 0 clamp(170px,19vw,220px);scroll-snap-align:start;text-decoration:none}
+.clip .media{position:relative;overflow:hidden;background:var(--sand)}
+.clip img{width:100%;aspect-ratio:9/16;object-fit:cover;transition:transform .5s var(--ease)}
+.clip:hover img{transform:scale(1.04)}
+.clip .pf{position:absolute;top:10px;left:10px;background:rgba(249,247,244,.92);font-family:'Geist Mono',monospace;font-size:11px;padding:3px 7px;text-transform:uppercase;letter-spacing:.04em}
+.clip .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px}
+.clip .meta b{font-size:22px;letter-spacing:-.04em}
+.clip .meta span{font-size:13px;color:var(--ink-2)}
+.clip p{margin:2px 0 0;font-size:14px;line-height:1.3}
+.rail-btns{display:flex;gap:8px}
+.rail-btns button{width:42px;height:42px;border-radius:50%;border:1px solid var(--ink);background:transparent;cursor:pointer;display:grid;place-items:center;color:var(--ink)}
+.rail-btns button:hover{background:var(--ink);color:#fff}
+
+/* personal */
+.personal{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.pc{text-decoration:none;display:block}
+.pc .media{position:relative;overflow:hidden}
+.pc img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s var(--ease)}
+.pc:hover img{transform:scale(1.04)}
+.pc h3{font-size:22px;letter-spacing:-.03em;margin:14px 0 6px;line-height:1.1}
+.pc .row{display:flex;gap:14px;color:var(--ink-2);font-size:14px;align-items:center}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.proj{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;min-height:300px}
+.proj .tag{align-self:flex-start}
+.proj .stack{margin:0 0 22px}
+.proj .status b{font-size:26px;letter-spacing:-.04em;font-weight:600}
+.proj .status a{font-weight:500;text-decoration:none;border-bottom:1px solid var(--ink)}
+.proj .status a:hover{color:var(--orange);border-color:var(--orange)}
+.proj .body{padding:24px;flex:1;display:flex;flex-direction:column}
+.proj h3{font-size:30px;letter-spacing:-.04em;margin:18px 0 10px}
+.proj p{color:var(--ink-2);margin:0 0 24px}
+.proj .status{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.proj .base{height:6px;background:var(--orange)}
+.placeholder{outline:1px dashed var(--ink-2);outline-offset:-1px}
+
+/* contact */
+.contact{padding:clamp(88px,12vw,160px) 0 clamp(64px,8vw,96px);text-align:center}
+.contact h2{font-size:clamp(56px,10vw,144px);margin:0 auto 24px;max-width:12ch}
+.contact p{color:var(--ink-2);max-width:520px;margin:0 auto 32px;font-size:18px}
+.socials{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.socials a{border:1px solid var(--ink);border-radius:8px;padding:9px 14px;font-weight:500;font-size:15px;text-decoration:none}
+.socials a:hover{background:var(--ink);color:#fff}
+footer{border-top:1px solid var(--line);padding:22px 0 30px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  nav ul{display:none}
+  .brand,.btn{white-space:nowrap}
+  nav .btn{padding:9px 14px;font-size:14px}
+  .hero-grid,.aud{grid-template-columns:1fr}
+  .portrait{max-width:420px}
+  .cases,.personal,.projects{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .stat,.stat+.stat{padding:22px 0 18px;border-left:0;border-bottom:1px solid var(--line)}
+  .brands-row{flex-direction:column;align-items:flex-start;gap:16px}
+  .marquee{width:100%}
+}
+@media (max-width:420px){ .brand span{display:none} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w,.fade,.reveal{opacity:1;filter:none;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><i></i>Bruno Ferreira <span>Media Kit</span></a>
+    <ul>
+      <li><a href="#performance">Performance</a></li>
+      <li><a href="#audience">Audience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+    <a class="btn btn-dark" href="mailto:brunohfmedeiros@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="mono fade" style="animation-delay:.05s">Growth Content &amp; Short-Form Strategist</div>
+        <h1 aria-label="Bruno Ferreira"><span class="w" style="animation-delay:.15s">Bruno</span><br><span class="w" style="animation-delay:.3s">Ferreira</span></h1>
+        <p class="lead fade" style="animation-delay:.5s">Scaling tech products and tools through organic short-form video.</p>
+        <div class="hero-meta fade" style="animation-delay:.65s">
+          <a class="btn btn-orange" href="mailto:brunohfmedeiros@gmail.com">brunohfmedeiros@gmail.com</a>
+          <span class="loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Based in Tel Aviv</span>
+        </div>
+      </div>
+      <div class="portrait cm fade" style="animation-delay:.35s">
+        <img src="img/bruno-black.jpg" alt="Portrait of Bruno Ferreira" width="913" height="1053">
+        <b></b><b></b><b></b><b></b>
+      </div>
+    </div>
+  </header>
+
+  <!-- BRANDS -->
+  <section class="brands" aria-label="Brands I've worked with">
+    <div class="wrap">
+      <div class="brands-row">
+        <div class="mono lbl">Brands I've<br>worked with</div>
+        <div class="marquee">
+          <div class="track" id="track">
+            <span class="logo"><img src="logos/soniox.png" alt="">Soniox</span>
+            <span class="logo"><img src="logos/picsart.svg" alt="">Picsart</span>
+            <span class="logo"><img class="word" src="logos/triips-word.webp" alt="Triips" style="height:26px"></span>
+            <span class="logo"><img src="logos/elevenlabs.svg" alt="">ElevenLabs</span>
+            <span class="logo"><img src="logos/openart.png" alt="">OpenArt</span>
+            <span class="logo"><img src="logos/lovable.svg" alt="">Lovable</span>
+            <span class="logo"><img src="logos/issen.png" alt="">Issen</span>
+            <span class="logo"><img class="word" src="logos/talkisrael.svg" alt="TalkIsrael" style="height:24px"></span>
+            <span class="logo"><img class="word" src="logos/israel-is-word.svg" alt="Israel-Is" style="height:22px"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE -->
+  <section id="performance">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="mono">Performance</div><h2 style="margin-top:12px">Reach, at a glance.</h2></div>
+        <div class="platforms">
+          <a href="https://salutbruno.lovable.app/" target="_blank" rel="noopener">Website</a>
+          <a href="https://www.tiktok.com/@salutbruno" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.instagram.com/salutbrunoh/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><span class="tag">01</span> <span class="mono">Historical views</span><div class="n" data-count="4425272">4,425,272</div><div class="mono">Grid, trial reels &amp; historical</div></div>
+        <div class="stat"><span class="tag">02</span> <span class="mono">Avg. views / post</span><div class="n" data-count="122924">122,924</div><div class="mono">Across published content</div></div>
+        <div class="stat"><span class="tag">03</span> <span class="mono">Avg. engagement</span><div class="n" data-count="15" data-suffix="%">15%</div><div class="mono">Weighted across networks</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section id="audience">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><div class="mono">Audience</div><h2 style="margin-top:12px">Who's watching.</h2><p>Brazil leads as the home base, São Paulo and Rio de Janeiro, followed by Israel and the United States, with a steady Canadian and European tier.</p></div></div>
+      <div class="aud">
+        <div class="panel reveal">
+          <div class="ring-row">
+            <div class="ring" style="background:conic-gradient(var(--ink) 0 62%,var(--orange) 0 95%,var(--sand) 0)"></div>
+            <div style="flex:1"><div class="mono">Gender</div>
+              <ul class="legend"><li><i style="background:var(--ink)"></i>Women<b>62%</b></li><li><i style="background:var(--orange)"></i>Men<b>33%</b></li><li><i style="background:var(--sand)"></i>Non-binary / other<b>5%</b></li></ul></div>
+          </div>
+          <div class="ring-row">
+            <div class="ring" style="background:conic-gradient(var(--ink) 0 47%,var(--orange) 0 71%,var(--blue) 0 92%,var(--sand) 0)"></div>
+            <div style="flex:1"><div class="mono">Age range</div>
+              <ul class="legend"><li><i style="background:var(--ink)"></i>25–34<b>47%</b></li><li><i style="background:var(--orange)"></i>18–24<b>24%</b></li><li><i style="background:var(--blue)"></i>35–44<b>21%</b></li><li><i style="background:var(--sand)"></i>45+<b>8%</b></li></ul></div>
+          </div>
+        </div>
+        <div class="panel reveal">
+          <div class="mono" style="margin-bottom:6px">Location</div>
+          <ul class="loc-list" id="locs">
+            <li><div class="top"><span>Brazil</span><b>45.2%</b></div><div class="bar"><i data-w="45.2"></i></div></li>
+            <li><div class="top"><span>Israel</span><b>32.5%</b></div><div class="bar"><i data-w="32.5"></i></div></li>
+            <li><div class="top"><span>United States</span><b>8.4%</b></div><div class="bar"><i data-w="8.4"></i></div></li>
+            <li><div class="top"><span>Canada</span><b>4.2%</b></div><div class="bar"><i data-w="4.2"></i></div></li>
+            <li><div class="top"><span>Italy</span><b>3.1%</b></div><div class="bar"><i data-w="3.1"></i></div></li>
+            <li><div class="top"><span>France</span><b>2.5%</b></div><div class="bar"><i data-w="2.5"></i></div></li>
+            <li><div class="top"><span>Other</span><b>4.1%</b></div><div class="bar"><i data-w="4.1"></i></div></li>
+          </ul>
+          <div class="map" id="map" role="img" aria-label="World map shading Brazil and Israel most strongly, then the United States, Canada, Italy and France"></div>
+          <div class="map-note">Data reported by the platforms, weighted by each network's size.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <div class="cases-block" id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="mono">Case studies</div><h2 style="margin-top:14px">Content that converts.<br>Strategies that scale.</h2></div>
+        <p>Three 100% organic Reels, chosen for the strategy behind them.</p>
+      </div>
+      <div class="cases">
+        <a class="case reveal" href="https://www.instagram.com/reel/DW4LBVPDidC/" target="_blank" rel="noopener">
+          <div class="media"><img src="img/ig-DW4LBVPDidC.jpg" alt="Reel: the storytelling hook" loading="lazy"><span class="play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span></div>
+          <div class="body"><div><span class="tag">01</span> <span class="mono">Short-form growth</span></div>
+            <h3>The storytelling hook</h3><p class="kind">Building organic reach</p>
+            <div class="nums"><div><b>774K</b> <span class="mono">views</span></div><div><b>4.9K</b> <span class="mono">saves</span></div></div></div>
+          <div class="base"></div>
+        </a>
+        <a class="case reveal" href="https://www.instagram.com/reel/DWzMsQ3jNM-/" target="_blank" rel="noopener">
+          <div class="media"><img src="img/ig-DWzMsQ3jNM-.jpg" alt="Reel: native product placement" loading="lazy"><span class="play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span></div>
+          <div class="body"><div><span class="tag">02</span> <span class="mono">Product placement</span></div>
+            <h3>Native sponsored</h3><p class="kind">High-intent curiosity</p>
+            <div class="nums"><div><b>734K</b> <span class="mono">views</span></div><div><b>27K</b> <span class="mono">saves</span></div></div></div>
+          <div class="base"></div>
+        </a>
+        <a class="case reveal" href="https://www.instagram.com/reel/DXcOiRDii6t/" target="_blank" rel="noopener">
+          <div class="media"><img src="img/ig-DXcOiRDii6t.jpg" alt="Reel: full-funnel growth" loading="lazy"><span class="play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg></span></div>
+          <div class="body"><div><span class="tag">03</span> <span class="mono">Community scale</span></div>
+            <h3>Full-funnel growth</h3><p class="kind">Comment conversion</p>
+            <div class="nums"><div><b>330K</b> <span class="mono">views</span></div><div><b>10K</b> <span class="mono">saves</span></div></div></div>
+          <div class="base"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP CONTENT -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><div class="mono">Top performing content</div><h2 style="margin-top:12px">Most viewed.</h2><p>Across Instagram, TikTok and YouTube Shorts.</p></div>
+        <div class="rail-btns"><button type="button" aria-label="Scroll left" data-dir="-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><button type="button" aria-label="Scroll right" data-dir="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
+      </div>
+      <div class="rail reveal" id="rail">
+        <a class="clip" href="https://www.instagram.com/reel/DW4LBVPDidC/" target="_blank" rel="noopener"><div class="media"><img src="img/ig-DW4LBVPDidC.jpg" alt="" loading="lazy"><span class="pf">Instagram</span></div><div class="meta"><b>774K</b><span>views</span></div><p>The storytelling hook</p></a>
+        <a class="clip" href="https://www.instagram.com/reel/DWzMsQ3jNM-/" target="_blank" rel="noopener"><div class="media"><img src="img/ig-DWzMsQ3jNM-.jpg" alt="" loading="lazy"><span class="pf">Instagram</span></div><div class="meta"><b>734K</b><span>views</span></div><p>Native product placement</p></a>
+        <a class="clip" href="https://www.tiktok.com/@salutbruno/video/7579325729008061714" target="_blank" rel="noopener"><div class="media"><img src="img/tt-7579325729008061714.jpg" alt="" loading="lazy"><span class="pf">TikTok</span></div><div class="meta"><b>81.3K</b><span>views</span></div><p>Learning French through social media</p></a>
+        <a class="clip" href="https://www.tiktok.com/@salutbruno/video/7605182220252253461" target="_blank" rel="noopener"><div class="media"><img src="img/tt-7605182220252253461.jpg" alt="" loading="lazy"><span class="pf">TikTok</span></div><div class="meta"><b>5.1K</b><span>views</span></div><p>Reply video, French TikTok</p></a>
+        <a class="clip" href="https://youtube.com/shorts/ZYDN-BeEM6E" target="_blank" rel="noopener"><div class="media"><img src="img/yt-ZYDN-BeEM6E.jpg" alt="" loading="lazy" style="object-position:50% 50%"><span class="pf">YouTube</span></div><div class="meta"><b>1.3K</b><span>views</span></div><p>Speaking multiple languages</p></a>
+        <a class="clip" href="https://youtube.com/shorts/yDF28HxVLEE" target="_blank" rel="noopener"><div class="media"><img src="img/yt-yDF28HxVLEE.jpg" alt="" loading="lazy"><span class="pf">YouTube</span></div><div class="meta"><b>1.2K</b><span>views</span></div><p>YouTube Short</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal"><div><div class="mono">Personal content</div><h2 style="margin-top:12px">Beyond the brief.</h2><p>A hand-picked range: carousel, slow travel and personal storytelling.</p></div></div>
+      <div class="personal">
+        <a class="pc reveal" href="https://www.tiktok.com/@salutbruno/video/7665424272013135122" target="_blank" rel="noopener"><div class="media cm"><img src="img/tt-7665424272013135122.jpg" alt="" loading="lazy"></div><h3>Viral carousel: everyday storytelling</h3><div class="row"><span class="tag">01</span><span>52.9K views</span></div></a>
+        <a class="pc reveal" href="https://www.tiktok.com/@salutbruno/video/7657200760601546005" target="_blank" rel="noopener"><div class="media"><img src="img/tt-7657200760601546005.jpg" alt="" loading="lazy"></div><h3>Slow travel in Israel</h3><div class="row"><span class="tag">02</span><span>1.8K views</span></div></a>
+        <a class="pc reveal" href="https://www.tiktok.com/@salutbruno/video/7677964816383790343" target="_blank" rel="noopener"><div class="media"><img src="img/tt-7677964816383790343.jpg" alt="" loading="lazy"></div><h3>Travel storytelling: trusting the journey</h3><div class="row"><span class="tag">03</span><span>746 views</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><div class="mono">Independent projects · 2026</div><h2 style="margin-top:12px">What I'm building now.</h2><p>AI tools I build myself and put to work on real marketing and teaching problems: agent workflows, data pipelines and automated production.</p></div></div>
+      <div class="projects">
+        <article class="proj reveal"><div class="body"><span class="tag">01</span><h3>AI reel studio</h3><p>An AI-assisted production workflow for short-form video: custom templates, local voice generation, sound effects and automated audio checks before anything ships.</p><div class="stack mono">Templates · Local TTS · SFX · Audio QA</div><div class="status"><span><b>11 reels</b> <span class="mono">produced, 1080×1920</span></span><a href="https://www.instagram.com/brunokoreann/" target="_blank" rel="noopener">@brunokoreann →</a></div></div><div class="base"></div></article>
+        <article class="proj reveal"><div class="body"><span class="tag">02</span><h3>Marketing intelligence pipeline</h3><p>Scores short-form videos and creators so content decisions rest on data. Atomic imports, approval gates, versioned scoring and an independent AI-agent review of every result.</p><div class="stack mono">Python · SQLite · AI agents</div><div class="status"><span><b>772 records</b> <span class="mono">51 videos · 21 creators</span></span></div></div><div class="base"></div></article>
+        <article class="proj reveal"><div class="body"><span class="tag">03</span><h3>Creator research &amp; planning</h3><p>Researches Instagram creators against relative performance benchmarks, not raw views, and turns what works into content plans and test ideas.</p><div class="stack mono">Benchmarks · Content planning</div><div class="status"><span><b>18 concepts</b> <span class="mono">+ 2 creative experiments</span></span></div></div><div class="base"></div></article>
+        <article class="proj reveal"><div class="body"><span class="tag">04</span><h3>Private lesson follow-ups</h3><p>A local AI model turns lesson transcripts into personalised follow-up drafts for each student. It runs on my own machine, so student data never leaves it.</p><div class="stack mono">Local AI model · Automation</div><div class="status"><span><b>Privacy-first</b> <span class="mono">runs fully local</span></span></div></div><div class="base"></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2 class="reveal">Let's work together.</h2>
+      <p class="reveal">Campaigns, localisation or content strategy across four languages. Tell me what you're building and I'll tell you how it travels.</p>
+      <a class="btn btn-orange reveal" href="mailto:brunohfmedeiros@gmail.com" style="font-size:17px;padding:14px 22px">brunohfmedeiros@gmail.com</a>
+      <div class="socials reveal">
+        <a href="https://www.tiktok.com/@salutbruno" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/salutbrunoh/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/bunomedeiros/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Bruno Ferreira</span><span>Tel Aviv</span></div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 8); }, {passive:true});
+
+  // duplicate marquee for a seamless loop
+  var track = document.getElementById('track');
+  track.innerHTML += track.innerHTML.replace(/alt="[^"]*"/g,'alt=""');
+  [].slice.call(track.children, track.children.length/2).forEach(function(el){ el.setAttribute('aria-hidden','true'); });
+
+  function countUp(el){
+    var target = +el.dataset.count, suf = el.dataset.suffix || '', t0 = null, dur = 1600;
+    if (reduce) return;
+    function step(t){ if(!t0) t0 = t; var p = Math.min((t - t0)/dur, 1), e = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(target * e).toLocaleString('en-US') + suf; if (p < 1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in');
+      en.target.querySelectorAll('[data-count]').forEach(countUp);
+      en.target.querySelectorAll('.bar i').forEach(function(i){ i.style.width = (i.dataset.w / 45.2 * 100) + '%'; });
+      io.unobserve(en.target);
+    });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  document.querySelectorAll('.rail-btns button').forEach(function(b){
+    b.addEventListener('click', function(){ var r = document.getElementById('rail'); r.scrollBy({left: b.dataset.dir * r.clientWidth * .8, behavior: reduce ? 'auto' : 'smooth'}); });
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script>
+(function(){
+  if (!window.d3 || !window.topojson) return;
+  var share = {'076':45.2,'376':32.5,'840':8.4,'124':4.2,'380':3.1,'250':2.5};
+  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json').then(function(w){
+    var land = topojson.feature(w, w.objects.countries);
+    land.features = land.features.filter(function(f){ return f.id !== '010'; });
+    var W = 640, H = 300, proj = d3.geoNaturalEarth1().fitSize([W, H], land), path = d3.geoPath(proj);
+    var col = d3.scaleSqrt().domain([0, 45.2]).range(['#F6C7A4', '#FF6A00']);
+    var svg = d3.select('#map').append('svg').attr('viewBox', '0 0 ' + W + ' ' + H).attr('aria-hidden', 'true');
+    svg.selectAll('path').data(land.features).join('path').attr('d', path)
+      .attr('fill', function(f){ return share[f.id] ? col(share[f.id]) : '#E9E5DF'; })
+      .attr('stroke', '#F9F7F4').attr('stroke-width', .5);
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>
